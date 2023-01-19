@@ -40,7 +40,9 @@ Los lenguajes de programación de alto nivel son considerados superiores al leng
 
 - Productividad: Los lenguajes de programación de alto nivel permiten escribir código más rápido y con menos errores. Esto se debe a que el código es más legible y fácil de entender, lo que permite una mayor eficiencia en la escritura y depuración del código.
 Portabilidad: El código escrito en lenguajes de programación de alto nivel es más fácil de portar a diferentes plataformas y arquitecturas. El código escrito en lenguaje ensamblador esta muy acoplado a una arquitectura específica y es difícil de portar a otra.
+
 - Mantenibilidad: El código escrito en lenguajes de programación de alto nivel es generalmente más fácil de mantener y modificar a medida que los requisitos del sistema cambian. El código escrito en lenguaje ensamblador es más difícil de entender y modificar, ya que esta muy acoplado a la arquitectura del procesador.
+
 - Capacidad de expresión: Los lenguajes de programación de alto nivel tienen una sintaxis más completa y una mayor capacidad de expresión, lo que permite a los desarrolladores escribir código más expresivo y conciso.
 
 En resumen, los lenguajes de programación de alto nivel proporcionan un mayor nivel de abstracción, son más productivos, portables, mantenibles y tienen una mayor capacidad de expresión que el lenguaje ensamblador. Sin embargo, el lenguaje ensamblador sigue siendo útil para tareas específicas que requieren un mayor control y rendimiento en la arquitectura del procesador.
@@ -100,22 +102,27 @@ En resumen, un lenguaje de programación tiene éxito cuando es fácil de usar, 
 ## 7. Nombre dos lenguajes de cada una de las siguientes categorías:
 
 - Lenguajes de programación de estilo von Neumann:
+
 C
 Fortran
 
 - Lenguajes de programación orientados a objetos:
+
 Java
 C++
 
 - Lenguajes de programación concurrente:
+
 Erlang
 Go
 
 - Lenguajes de programación funcional:
+
 Haskell
 Lisp
 
 - Lenguajes de programación lógico:
+
 Prolog
 Mercury
 
@@ -217,7 +224,6 @@ En general, los interpretes son esenciales para la ejecución de programas escri
 ## 24. ¿Cómo se llama el fichero en el que se guardan las máquinas conocidas por ssh?
 
 ## 25. ¿Cómo se llama y en qué lugar está  el fichero en el que se especifican las opciones para el cliente ssh?
-
 
 
 
@@ -327,7 +333,8 @@ $ git config ________ user._____ "Firstname Lastname"
 $ git config ________ user._____ "your_email@youremail.com"
 
 
-*$ git config --global user.name "Firstname Lastname"* *$ git config --global user.email "your_email@youremail.com"*
+**$ git config --global user.name "Firstname Lastname"**
+**$ git config --global user.email "your_email@youremail.com"**
 
 Los comandos anteriores configuran el nombre y el correo electrónico del usuario globalmente en el sistema, de esta forma cada vez que se haga un commit, se asociará este nombre y correo electrónico con el commit en cuestión.
 
@@ -336,15 +343,15 @@ Los comandos anteriores configuran el nombre y el correo electrónico del usuari
 
 Para ver los valores de una configuración git se utiliza el comando:
 
-*$ git config --list*
+**$ git config --list**
 
 Este comando mostrará todas las configuraciones git que están actualmente configuradas en el sistema, incluyendo el nombre de usuario, el correo electrónico, la dirección del repositorio remoto, entre otros.
 
 Si se quiere ver un valor específico de configuración se puede utilizar el comando:
 
-*$ git config <clave>*
+**$ git config** **<clave>**
 
-Donde *<clave>* es el nombre de la configuración que se quiere ver. Por ejemplo: $ git config user.name
+Donde **<clave>** es el nombre de la configuración que se quiere ver. Por ejemplo: **$ git config user.name**
 Este comando mostrará el valor de configuración del nombre de usuario.
 
 
