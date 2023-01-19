@@ -5,20 +5,20 @@ Un bloque en Ruby es un fragmento de código que se puede pasar como argumento a
 ## 2. ¿Qué se obtiene como salida? Describa el comportamiento del programa.
 ```Ruby
 class MyArray < Array
-def initialize (a_array)
-super (a_array)
-end
-def times_repeat (a_num)
-a_num.times do |num|
-self.each do |i|
-yield "[#{num}] :: ’#{i}’"
-end
-end
-end
+  def initialize (a_array)
+    super (a_array)
+  end
+  def times_repeat (a_num)
+    a_num.times do |num|
+      self.each do |i|
+        yield "[#{num}] :: ’#{i}’"
+      end
+    end
+  end
 end
 a_array = MyArray.new([1,2,3])
 a_array.times_repeat(2) do |x|
-puts x
+  puts x
 end
 
 ```
@@ -43,9 +43,10 @@ Un Proc es un objeto que representa un bloque de código en Ruby. Se puede crear
 
 ```Ruby
 def a_method( a_block_argument)
-x = "Bye"
-a_block_argument.call
+  x = "Bye"
+  a_block_argument.call
 end
+
 x = "Hello"
 a_block = Proc.new {puts x}
 a_method(a_block)
@@ -68,7 +69,7 @@ Un lambda es una forma de definir un bloque de código en Ruby. Es similar a una
 ## 6. ¿Qué  se obtiene como salida? Describa el comportamiento del programa.
 ```Ruby
 def a_lambda( arg )
-return lambda {|i| i * arg}
+  return lambda {|i| i * arg}
 end
 a = a_lambda(0.10)
 b = a_lambda(0.175)
@@ -104,7 +105,7 @@ Sin embargo, en la primera llamada a la función tutu, el bloque no se pasa corr
 ```Ruby
 array = [1,2,3,4]
 array.collect! do |n|
-n ** 2
+  n ** 2
 end
 puts array
 ```
@@ -120,13 +121,13 @@ b) square = Proc.new { |n| n ** 2 } iterador!(array, &square) puts array
 
 ```Ruby
 class AClass
-def a_method(a_block)
-@hello = "I say"
-puts "[ In AClass.a_method ] "
-puts "in #{self} object of class #{self.class}, @hello = #{@hello}"
-puts "[ In AClass.a_method ] when block is called... "
-a_block.call
-end
+  def a_method(a_block)
+    @hello = "I say"
+    puts "[ In AClass.a_method ] "
+    puts "in #{self} object of class #{self.class}, @hello = #{@hello}"
+    puts "[ In AClass.a_method ] when block is called... "
+    a_block.call
+  end
 end
 
 a_closure = lambda {
@@ -135,8 +136,8 @@ puts "in #{self} object of class #{self.class}, @hello = #{@hello}"
 }
 
 def a_method(a_closure)
-@hello = "hello"
-a_closure.call
+  @hello = "hello"
+  a_closure.call
 end
 
 a_method(a_closure)
@@ -221,10 +222,14 @@ Esto se logra a través de la creación de una tabla de memoria que almacena los
 
 - Añadir elementos a un array o cadena:
 ```Ruby 
-a) 	indexes = [1,2,3]
+a) 	
+
+indexes = [1,2,3]
 indexes << 4 #[1,2,3,4]
 
-b) 	indexes = [1,2,3]
+b) 	
+
+indexes = [1,2,3]
 all_indexes = indexes + [4] #[1,2,3,4]
 ```
 
@@ -235,10 +240,14 @@ sigue este principio ya que se esta creando un nuevo array con el elemento 4 inc
 - Actualización de hashes:
 
 ```Ruby
-a) 	hash = {:a => 1, :b => 2}
+a) 	
+
+hash = {:a => 1, :b => 2}
 hash[:c] = 3
 
-b) 	hash = {:a => 1, :b => 2}
+b) 	
+
+hash = {:a => 1, :b => 2}
 new_hash = hash.merge(:c => 3)
 ```
 
@@ -248,10 +257,14 @@ La opción b) sigue el principio de no actualizar las variables, sino crearlas. 
 - Modificaciones sobre un objeto:
 
 ```Ruby
-a) 	string = "LPP"
+a) 	
+
+string = "LPP"
 string.gsub!(/P/,’p’) #"Lpp"
 
-b) 	string = "LPP"
+b) 	
+
+string = "LPP"
 new_string = string.gsub(/P/,’p’) #"Lpp"
 ```
 
@@ -261,12 +274,16 @@ La opción b) sigue este principio, ya que en lugar de modificar la variable ori
 - Acumulacion de valores
 
 ```Ruby
-a) 	output = []
+a) 	
+
+output = []
 output << 1
 output << 2 if is_it_needed?
 output << 3
 
-b)	 output = [1, 2 if is_it_needed?, 3].compact
+b)	 
+
+output = [1, 2 if is_it_needed?, 3].compact
 ```
 
 b) output = [1, 2 if is_it_needed?, 3].compact sigue este principio ya que se está creando un nuevo arreglo con los valores deseados, en lugar de actualizar el arreglo existente. La función compact elimina los valores nulos del arreglo.
@@ -274,10 +291,14 @@ b) output = [1, 2 if is_it_needed?, 3].compact sigue este principio ya que se es
 - Reutilización de variables
 
 ```Ruby
-a) 	number = gets
+a) 
+
+number = gets
 number = number.to_i
 
-b) 	number_string = gets
+b) 
+
+number_string = gets
 number = number_string.to_i
 ```
 
@@ -288,12 +309,14 @@ La opción b.
 - (init-empy + each + push) o map
 
 ```Ruby
-a) 	cars = []
+a) 	
+    cars = []
     ["rayo","chicks"].each do |name|
       cars << name.upcase
     end       # ["RAYO", "CHICKS"]
 
-b) 	cars = ["rayo","chicks"].map do |name|
+b) 	
+    cars = ["rayo","chicks"].map do |name|
       name.upcase
     end      # ["RAYO", "CHICKS"]
 ```
@@ -302,14 +325,16 @@ La opción b) sigue el principio de utilizar una función existente en lugar de 
 - (init-empy + each + conditional push) o (select/reject)
 
 ```Ruby
-a) 	cars = []
+a) 	
+    cars = []
     ["rayo","chicks"].each do |name|
       if name.size == 4
         cars << name
       end
     end          # ["rayo"]
 
-b) 	cars = ["rayo","chicks"].select do |name|
+b) 	
+    cars = ["rayo","chicks"].select do |name|
         name.size == 4
      end       # ["rayo"]
 ```
@@ -318,12 +343,14 @@ La opción b) sigue el principio de utilizar funciones de orden superior en luga
 - (initialize + each + accumulate) o inject
 
 ```Ruby
-a) 	length = 0  
+a) 	
+    length = 0  
     ["rayo","chicks"].each do |car_name|
       length += car_name.length
     end 			# 10
 
-b) 	length = ["rayo","chicks"].inject(0) do |accumulator,car_name|
+b) 
+    length = ["rayo","chicks"].inject(0) do |accumulator,car_name|
       acummulator + car_name.length
     end 				# 10
 ```
@@ -333,16 +360,18 @@ La opción b) sigue el principio de utilizar una función existente (inject) en 
 - (empty + each + accumulate + push) o scan
 
 ```Ruby
-a) 	lengths = [0]
+a) 	
+    lengths = [0]
     total_length = 0
     ["rayo","chicks"].each do |car_name|
         total_length += car_name.length
         lengths << total_length
     end 		# [0, 4, 10]
 
-b)  lengths = ["rayo","chicks"].partial_inject(0) do |acc, car_name|
-      acc + car_name.length
-    end 		# [0, 4, 10]
+b)  
+  lengths = ["rayo","chicks"].partial_inject(0) do |acc, car_name|
+    acc + car_name.length
+  end 		# [0, 4, 10]
 
 module Enumerable
   def partial_inject(initial_value, &block)

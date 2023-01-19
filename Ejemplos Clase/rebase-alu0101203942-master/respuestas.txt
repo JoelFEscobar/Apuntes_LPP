@@ -1,0 +1,93 @@
+Poniendo a punto el gestor de intérpretes de Ruby
+31:
+
+Hay 3 ramas, dos son locales (doc y master) y una remota gorigin
+
+
+
+* commit 681b86b (HEAD -> doc)                                                                          
+| Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                     
+| Date:   7 seconds ago                                                                                 |                                                                                                       
+|     Grafo con la rama doc                                                                             |                                                                                                       
+* commit 8ff5188 (gorigin/master, master)                                                               
+| Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                     
+| Date:   12 minutes ago                                                                                |                                                                                                       
+|     Creado el fichero de respuestas                                                                   |                                                                                                       
+* commit 04ca944                                                                                        
+| Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                     
+| Date:   14 minutes ago                                                                                |                                                                                                       
+|     Creando el fichero README.md                                                                      |                                                                                                       
+* commit 72141b4                                                                                         
+ Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                       
+ Date:   17 minutes ago                                                                                                                                                                                              
+ Creando el fichero .gitignore   
+
+
+
+
+42:
+HEAD se encuentra apuntando a doc
+
+* commit f539c51 (HEAD -> doc)                                                                          
+ |Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                     
+ | Date:   5 seconds ago                                                                                 |                                                                                                       
+ |     Grafo con Hello World añadido                                                                     |                                                                                                       
+ * commit 681b86b                                                                                        
+ | Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                     
+ | Date:   9 minutes ago                                                                                 |                                                                                                       
+ |     Grafo con la rama doc                                                                             |                                                                                                       
+ | * commit f010527 (master)                                                                             
+ |/  Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                   
+ |   Date:   3 minutes ago                                                                               |                                                                                                       
+ |       Creando Hola mundo en Ruby                                                                      |                                                                                                       
+ * commit 8ff5188 (gorigin/master)                                                                       
+ | Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                     
+ | Date:   21 minutes ago                                                                                |                                                                                                       
+ |     Creado el fichero de respuestas                                                                   |                                                                                                       
+ * commit 04ca944                                                                                        
+ | Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                     
+ | Date:   22 minutes ago                                                                                |                                                                                                       
+ |     Creando el fichero README.md                                                                      |                                                                                                       
+ * commit 72141b4                                                                                          
+ Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                      
+Date:   26 minutes ago                                                                                                                                                                                              
+Creando el fichero .gitignore       
+
+49:  
+doc y master se encuentran apuntando a HEAD
+
+* commit 71f1267 (HEAD -> master, doc)                                                                  
+| Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                     
+| Date:   71 seconds ago                                                                                |                                                                                                       
+|     Grafo con Hello World añadido                                                                     |                                                                                                       
+* commit 62b9c9f                                                                                        
+| Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                     
+| Date:   10 minutes ago                                                                                |                                                                                                       
+|     Grafo con la rama doc                                                                             |                                                                                                       
+* commit f010527                                                                                        
+| Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                     
+| Date:   4 minutes ago                                                                                 |                                                                                                       
+|     Creando Hola mundo en Ruby                                                                        |                                                                                                       
+* commit 8ff5188 (gorigin/master)                                                                       
+| Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                     
+| Date:   22 minutes ago                                                                                |                                                                                                       
+|     Creado el fichero de respuestas                                                                   |                                                                                                       
+* commit 04ca944                                                                                        
+| Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                     
+| Date:   24 minutes ago                                                                                |                                                                                                       
+|     Creando el fichero README.md                                                                      |                                                                                                       
+* commit 72141b4                                                                                          
+Author: Laura Gonzalez <alu0101203942@ull.edu.es>                                                       
+Date:   27 minutes ago                                                                                                                                                                                              
+Creando el fichero .gitignore  
+
+65:
+
+RVM es una plataforma de software diseñada para administrar múltiples instalaciones de Ruby en el mismo dispositivo
+rvm 1.29.12
+
+72:
+
+Usando el intérprete de ruby se ejecuta todo el programa, usando irb se va ejecutando linea a linea
+
+
