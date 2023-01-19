@@ -1,23 +1,34 @@
 # Ejercicios Tema 1: Introducción: Modelos de programación.
 
 
-1. ¿Cuáles son los paradigmas de programación más importantes? Enumérelos y descríbalos.
+## 1. ¿Cuáles son los paradigmas de programación más importantes? Enumérelos y descríbalos.
 
-Los paradigmas de programación son enfoques generales para escribir software y resolver problemas de programación. Algunos de los más importantes son:
-Programación estructurada: Es un enfoque que se centra en dividir el programa en bloques lógicos y jerárquicos de código, utilizando estructuras de control de flujo como condicionales y bucles para controlar la ejecución del programa. Es uno de los primeros y más antiguos paradigmas.
-Programación orientada a objetos: Este enfoque se centra en el uso de objetos y clases para modelar elementos del mundo real en el código. Los objetos tienen propiedades y métodos, y se comunican entre sí mediante mensajes. Es uno de los más populares y utilizados en la actualidad.
-Programación funcional: Este enfoque se centra en el uso de funciones matemáticas puras para resolver problemas de programación. Se basa en el uso de funciones que no tienen efectos secundarios y retornan valores. Esto permite una mayor facilidad de pruebas y una mayor escalabilidad.
-Programación lógica: Es un enfoque basado en la lógica matemática para resolver problemas de programación, se basa en la utilización de reglas y hechos para inferir conclusiones.
-Programación concurrente: Es un enfoque que se centra en la ejecución de varias tareas al mismo tiempo, para aprovechar al máximo el uso de múltiples núcleos y procesadores.
-Programación declarativa: Este enfoque se centra en describir lo que el programa debe hacer, en lugar de cómo debe hacerlo. Es una forma de escribir programas más concisos y legibles, ya que se enfoca en el problema en sí mismo, más que en los detalles de su implementación.
+Los paradigmas de programación son enfoques generales para escribir software y resolver problemas de programación. 
+Algunos de los más importantes son:
+
+- Programación estructurada: Es un enfoque que se centra en dividir el programa en bloques lógicos y jerárquicos de código, utilizando estructuras de control de flujo como condicionales y bucles para controlar la ejecución del programa. Es uno de los primeros y más antiguos paradigmas.
+
+- Programación orientada a objetos: Este enfoque se centra en el uso de objetos y clases para modelar elementos del mundo real en el código. Los objetos tienen propiedades y métodos, y se comunican entre sí mediante mensajes. Es uno de los más populares y utilizados en la actualidad.
+
+- Programación funcional: Este enfoque se centra en el uso de funciones matemáticas puras para resolver problemas de programación. Se basa en el uso de funciones que no tienen efectos secundarios y retornan valores. Esto permite una mayor facilidad de pruebas y una mayor escalabilidad.
+
+- Programación lógica: Es un enfoque basado en la lógica matemática para resolver problemas de programación, se basa en la utilización de reglas y hechos para inferir conclusiones.
+
+- Programación concurrente: Es un enfoque que se centra en la ejecución de varias tareas al mismo tiempo, para aprovechar al máximo el uso de múltiples núcleos y procesadores.
+
+- Programación declarativa: Este enfoque se centra en describir lo que el programa debe hacer, en lugar de cómo debe hacerlo. Es una forma de escribir programas más concisos y legibles, ya que se enfoca en el problema en sí mismo, más que en los detalles de su implementación.
+
 Cada uno de estos paradigmas tiene sus propias ventajas y desventajas, y pueden ser combinados para adaptarse mejor a diferentes situaciones y problemas de programación.
 
 
-2. ¿Cual es la diferencia entre el lenguaje máquina y el lenguaje ensamblador?
+## 2. ¿Cual es la diferencia entre el lenguaje máquina y el lenguaje ensamblador?
 
 La diferencia principal entre el lenguaje máquina y el lenguaje ensamblador es el nivel de abstracción que proporcionan.
-El lenguaje máquina es el lenguaje que entiende directamente el procesador. Es un conjunto de instrucciones binarias que describen una tarea específica para el procesador. Es un lenguaje de bajo nivel, ya que está muy cerca de la arquitectura del procesador y requiere un gran conocimiento de la misma.
-El lenguaje ensamblador, por otro lado, es un lenguaje de alto nivel que proporciona una representación más fácil de entender para las instrucciones del lenguaje máquina. Utiliza un conjunto de abreviaciones y símbolos para describir las instrucciones del lenguaje máquina, lo que lo hace más legible para los humanos. Sin embargo, sigue estando cerca de la arquitectura del procesador y requiere un conocimiento de la misma.
+
+- El lenguaje máquina es el lenguaje que entiende directamente el procesador. Es un conjunto de instrucciones binarias que describen una tarea específica para el procesador. Es un lenguaje de bajo nivel, ya que está muy cerca de la arquitectura del procesador y requiere un gran conocimiento de la misma.
+
+- El lenguaje ensamblador, por otro lado, es un lenguaje de alto nivel que proporciona una representación más fácil de entender para las instrucciones del lenguaje máquina. Utiliza un conjunto de abreviaciones y símbolos para describir las instrucciones del lenguaje máquina, lo que lo hace más legible para los humanos. Sin embargo, sigue estando cerca de la arquitectura del procesador y requiere un conocimiento de la misma.
+
 En resumen, el lenguaje ensamblador es un paso hacia arriba en la abstracción desde el lenguaje máquina. Es más fácil de leer y escribir que el lenguaje máquina, pero requiere un conocimiento de la arquitectura del procesador y todavía esta cercano a la arquitectura de la máquina.
 
 
