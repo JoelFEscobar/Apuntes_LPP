@@ -148,6 +148,30 @@ En resumen, los lenguajes declarativos son aquellos donde se especifica lo que s
 
 ## 13. Proponga tres codificaciones con tres tipos de lenguajes de programación: uno imperativo, otro funcional y uno lógico, para:
 a)  el algoritmo de Euclides para calcular el maximo coḿun divisor entre dos ńumeros.
+- En lenguaje C el algoritmo se podría escribir de la siguiente manera (Imperativo):
+```C
+int mcd(int a, int b) {
+    while (b != 0) {
+        int r = a % b;
+        a = b;
+        b = r;
+    }
+    return a;
+}
+```
+- Para calcular el máximo común divisor (MCD) entre dos números con un lenguaje funcional, se puede utilizar también el algoritmo de Euclides. A continuación, se proporciona un ejemplo de cómo se podría implementar el algoritmo en un lenguaje funcional como Haskell:
+```Haskell
+mcd :: Int -> Int -> Int
+mcd a 0 = a
+mcd a b = mcd b (a `mod` b)
+```
+
+- A continuación, se proporciona un ejemplo de cómo se podría implementar el algoritmo en Prolog:
+```Prolog
+mcd(A, 0, A).
+mcd(A, B, MCD) :- A > B, R is A mod B, mcd(B, R, MCD).
+mcd(A, B, MCD) :- A < B, R is B mod A, mcd(A, R, MCD).
+```
 b)  el algoritmo para calcular un número dado de números de Fibonacci.
 c)  el algoritmo para calcular el factorial de un número.
 
@@ -333,8 +357,8 @@ $ git config ________ user._____ "Firstname Lastname"
 $ git config ________ user._____ "your_email@youremail.com"
 
 
-**$ git config --global user.name "Firstname Lastname"**
-**$ git config --global user.email "your_email@youremail.com"**
+`**$ git config --global user.name "Firstname Lastname"**`
+`**$ git config --global user.email "your_email@youremail.com"**`
 
 Los comandos anteriores configuran el nombre y el correo electrónico del usuario globalmente en el sistema, de esta forma cada vez que se haga un commit, se asociará este nombre y correo electrónico con el commit en cuestión.
 
@@ -343,21 +367,21 @@ Los comandos anteriores configuran el nombre y el correo electrónico del usuari
 
 Para ver los valores de una configuración git se utiliza el comando:
 
-**$ git config --list**
+`**$ git config --list**`
 
 Este comando mostrará todas las configuraciones git que están actualmente configuradas en el sistema, incluyendo el nombre de usuario, el correo electrónico, la dirección del repositorio remoto, entre otros.
 
 Si se quiere ver un valor específico de configuración se puede utilizar el comando:
 
-**$ git config** **<clave>**
+`**$ git config** **<clave>**`
 
-Donde **<clave>** es el nombre de la configuración que se quiere ver. Por ejemplo: **$ git config user.name**
+Donde `**<clave>**` es el nombre de la configuración que se quiere ver. Por ejemplo: `**$ git config user.name**`
 Este comando mostrará el valor de configuración del nombre de usuario.
 
 
 ## 36. ¿Como se puede hacer que gitignore estos ficheros?
 
-Para hacer que Git ignore ciertos archivos o directorios específicos, se debe crear un archivo llamado ".gitignore" en la raíz del repositorio local. Este archivo contiene una lista de patrones de archivos o directorios que Git debe ignorar.
+Para hacer que Git ignore ciertos archivos o directorios específicos, se debe crear un archivo llamado `".gitignore"` en la raíz del repositorio local. Este archivo contiene una lista de patrones de archivos o directorios que Git debe ignorar.
 
 Para agregar un archivo o directorio específico al archivo .gitignore, se puede agregar el nombre del archivo o el camino del directorio en una nueva línea en el archivo .gitignore. Por ejemplo, si se quiere ignorar un archivo llamado "file.txt" se agrega "file.txt" en una nueva linea en el archivo .gitignore
 
@@ -374,9 +398,9 @@ Para crear un nuevo repositorio Git, siga los siguientes pasos:
 
 - Abra la terminal o línea de comando y navegue hasta la carpeta donde desea crear el repositorio.
 - Inicie el repositorio utilizando el comando "git init" Este comando crea una carpeta oculta llamada ".git" en la carpeta actual que contiene toda la información necesaria para el seguimiento de los cambios en el repositorio.
-- Agregue los archivos al repositorio utilizando el comando "git add <file>" para agregar un archivo específico o "git add ." para agregar todos los archivos en la carpeta actual.
-- Realice un primer commit para confirmar los cambios utilizando el comando "git commit -m “mensaje del commit”"
-- Si se desea trabajar con un repositorio remoto, se debe crear un repositorio en un servicio de repositorio remoto como GitHub, GitLab, Bitbucket, entre otros y luego se debe vincular el repositorio local con el remoto utilizando los comandos: $ git remote add origin <dirección del repositorio remoto> $ git push -u origin master
+- Agregue los archivos al repositorio utilizando el comando `"git add <file>"` para agregar un archivo específico o "git add ." para agregar todos los archivos en la carpeta actual.
+- Realice un primer commit para confirmar los cambios utilizando el comando `"git commit -m “mensaje del commit”"`
+- Si se desea trabajar con un repositorio remoto, se debe crear un repositorio en un servicio de repositorio remoto como GitHub, GitLab, Bitbucket, entre otros y luego se debe vincular el repositorio local con el remoto utilizando los comandos: `$ git remote add origin <dirección del repositorio remoto>` `$ git push -u origin master`
 
 Con estos pasos se habrá creado un repositorio git vacío y listo para ser utilizado para el control de versiones.
 
@@ -385,9 +409,10 @@ Con estos pasos se habrá creado un repositorio git vacío y listo para ser util
 
 Para clonar un repositorio Git, siga los siguientes pasos:
 - Abra la terminal o línea de comando y navegue hasta la carpeta donde desea clonar el repositorio.
-- Utilice el comando "git clone <URL del repositorio>" para clonar el repositorio en su sistema. La URL del repositorio se puede obtener desde el sitio web del repositorio remoto, como GitHub, GitLab, Bitbucket, entre otros.
+- Utilice el comando `"git clone <URL del repositorio>"` para clonar el repositorio en su sistema. La URL del repositorio se puede obtener desde el sitio web del repositorio remoto, como GitHub, GitLab, Bitbucket, entre otros.
 - Una vez completado el proceso de clonación, una nueva carpeta con el nombre del repositorio clonado se habrá creado en su sistema. Esta carpeta contendrá una copia exacta del repositorio remoto, incluyendo toda la historia de commits y ramas existentes.
-- Por defecto, el comando clona la rama master, si quieres clonar otra rama específica debes agregar el nombre de la rama al final del comando, por ejemplo: git clone <URL del repositorio> <nombre de la rama>
+- Por defecto, el comando clona la rama master, si quieres clonar otra rama específica debes agregar el nombre de la rama al final del comando, por ejemplo: 
+  `git clone <URL del repositorio> <nombre de la rama>`
 - Una vez finalizado el proceso de clonación, podrá trabajar con el repositorio localmente, realizar cambios, crear ramas, hacer commits, etc. y luego subir los cambios al repositorio remoto si así lo desea.
 
 Con estos pasos se habrá clonado un repositorio git y tendrás una copia exacta del repositorio original en tu sistema, listo para trabajar en el.
@@ -397,10 +422,10 @@ Con estos pasos se habrá clonado un repositorio git y tendrás una copia exacta
 
 Para añadir cambios al control de versiones de Git, siga los siguientes pasos:
 - Abra la terminal o línea de comando y navegue hasta la carpeta del repositorio local.
-- Utilice el comando "git status" para ver los archivos que han cambiado en el repositorio. Esto le mostrará los archivos que están en el estado de "no seguimiento" o "sin seguimiento"
-- Utilice el comando "git add <file>" para añadir los cambios de un archivo específico al área de preparación (staging area). También se puede utilizar el comando "git add ." para añadir todos los cambios en la carpeta actual al área de preparación
-- Utilice el comando "git commit -m “mensaje del commit”" para confirmar los cambios y añadir un mensaje que describa los cambios realizados. Este comando mueve los cambios del área de preparación al historial del repositorio.
-- Utilice el comando "git push" para subir los cambios al repositorio remoto si está trabajando con uno.
+- Utilice el comando `"git status"` para ver los archivos que han cambiado en el repositorio. Esto le mostrará los archivos que están en el estado de "no seguimiento" o "sin seguimiento"
+- Utilice el comando `"git add <file>"` para añadir los cambios de un archivo específico al área de preparación (staging area). También se puede utilizar el comando "git add ." para añadir todos los cambios en la carpeta actual al área de preparación
+- Utilice el comando `"git commit -m “mensaje del commit”"` para confirmar los cambios y añadir un mensaje que describa los cambios realizados. Este comando mueve los cambios del área de preparación al historial del repositorio.
+- Utilice el comando `"git push"` para subir los cambios al repositorio remoto si está trabajando con uno.
 Con estos pasos se habrán añadido los cambios al control de versiones de Git y estarán disponibles para ser seguidos y revertidos si es necesario.
 
 
@@ -408,8 +433,8 @@ Con estos pasos se habrán añadido los cambios al control de versiones de Git y
 
 Para enviar los cambios añadidos al repositorio remoto, siga los siguientes pasos:
 - Abra la terminal o línea de comando y navegue hasta la carpeta del repositorio local.
-- Utilice el comando "git status" para verificar que los cambios hayan sido confirmados y estén en el repositorio local.
-- Utilice el comando "git push" para subir los cambios al repositorio remoto. Este comando enviará todos los commits realizados desde la última vez que se subieron cambios al repositorio remoto.
+- Utilice el comando `"git status"` para verificar que los cambios hayan sido confirmados y estén en el repositorio local.
+- Utilice el comando `"git push"` para subir los cambios al repositorio remoto. Este comando enviará todos los commits realizados desde la última vez que se subieron cambios al repositorio remoto.
 
 Si se está trabajando con un repositorio remoto protegido con una autenticación, se deben proporcionar las credenciales de acceso.
 
@@ -418,13 +443,13 @@ Con estos pasos se habrán enviado los cambios añadidos al repositorio remoto y
 
 ## 41. ¿Cómo se configura qué editor se ejecuta para los mensajes de registro (log)?
 
-git config --global core.________ ________
+`git config --global core.________ ________`
 
 Para configurar qué editor se ejecuta para los mensajes de registro (log) en Git, se utiliza el siguiente comando:
-*git config --global core.editor <editor>*
+`*git config --global core.editor <editor>*`
 
 Donde <editor> es el nombre del editor de texto que se desea utilizar. Por ejemplo, para configurar el editor nano se utilizaría el comando:
-*git config --global core.editor nano*
+`*git config --global core.editor nano*`
 
 También se puede especificar la ruta completa del ejecutable del editor si no esta en el PATH.
 
@@ -434,19 +459,19 @@ Es importante mencionar que esta configuración es global, es decir, se aplicar�
 ## 42. ¿Para qué sirven y en qué se difieren los ficheros /etc/gitconfig, ~/.git config ~/.git/config
 
 Los archivos de configuración de Git son utilizados para especificar opciones de configuración para su instalación y uso de Git. Los tres archivos mencionados son:
-- */etc/gitconfig*: Este archivo contiene la configuración global para todos los usuarios y repositorios en el sistema. Es utilizado para especificar opciones que deben ser aplicadas a todos los usuarios y repositorios en el sistema.
+- `*/etc/gitconfig*`: Este archivo contiene la configuración global para todos los usuarios y repositorios en el sistema. Es utilizado para especificar opciones que deben ser aplicadas a todos los usuarios y repositorios en el sistema.
 
-- *~/.gitconfig*: Este archivo contiene la configuración personal para un usuario específico. Es utilizado para especificar opciones que deben ser aplicadas solo para ese usuario, independientemente del repositorio en el que esté trabajando.
+- `*~/.gitconfig*`: Este archivo contiene la configuración personal para un usuario específico. Es utilizado para especificar opciones que deben ser aplicadas solo para ese usuario, independientemente del repositorio en el que esté trabajando.
 
-- *~/.git/config*: Este archivo contiene la configuración específica para un repositorio específico. Es utilizado para especificar opciones que deben ser aplicadas solo para ese repositorio, independientemente del usuario que esté trabajando en el.
+- `*~/.git/config*`: Este archivo contiene la configuración específica para un repositorio específico. Es utilizado para especificar opciones que deben ser aplicadas solo para ese repositorio, independientemente del usuario que esté trabajando en el.
 
-Las opciones especificadas en el archivo ~/.git/config tienen prioridad sobre las opciones especificadas en ~/.gitconfig, que a su vez tienen prioridad sobre las opciones especificadas en /etc/gitconfig. En otras palabras, las opciones especificadas en el archivo de configuración del repositorio tienen prioridad sobre las opciones especificadas en el archivo de configuración del usuario y las opciones especificadas en el archivo de configuración global.
+Las opciones especificadas en el archivo `~/.git/config` tienen prioridad sobre las opciones especificadas en `~/.gitconfig`, que a su vez tienen prioridad sobre las opciones especificadas en `/etc/gitconfig`. En otras palabras, las opciones especificadas en el archivo de configuración del repositorio tienen prioridad sobre las opciones especificadas en el archivo de configuración del usuario y las opciones especificadas en el archivo de configuración global.
 
 
 ## 43. ¿Cómo se ve el estado de mis ficheros con respecto al repositorio?
 
 Para ver el estado de los archivos con respecto al repositorio en Git, se utiliza el siguiente comando:
-git status
+`git status`
 
 Este comando muestra información sobre los archivos que han sido modificados, agregados o eliminados desde el último commit, así como los archivos que están en el área de preparación (staging area) y los que no están siendo seguidos por Git.
 
@@ -488,9 +513,9 @@ En resumen, un archivo que aparece en la sección "modified" es un archivo que h
 
 ## 47. ¿Qué significa que un fichero esté sin seguimiento (untracked)?
 
-Cuando un archivo aparece como "untracked" en el resultado del comando "git status", significa que ese archivo no está siendo seguido por Git.
+Cuando un archivo aparece como "untracked" en el resultado del comando `"git status"`, significa que ese archivo no está siendo seguido por Git.
 
-Esto significa que el archivo no ha sido incluido en una confirmación (commit) anterior, y no ha sido agregado al área de preparación (staging area) con el comando "git add".
+Esto significa que el archivo no ha sido incluido en una confirmación (commit) anterior, y no ha sido agregado al área de preparación (staging area) con el comando `"git add"`.
 
 Los archivos sin seguimiento pueden ser cualquier tipo de archivo nuevo en el sistema de archivos local, incluyendo archivos que se han creado recientemente o archivos que se han descargado desde internet.
 
@@ -501,7 +526,7 @@ En resumen, un archivo sin seguimiento es un archivo que no está siendo seguido
 
 ## 48. ¿Que compara el comando git diff cuando no se le pasan opciones?
 
-El comando "git diff" compara los archivos que se encuentran en el sistema de archivos local con los archivos que se encuentran en el área de preparación (staging area).
+El comando `"git diff"` compara los archivos que se encuentran en el sistema de archivos local con los archivos que se encuentran en el área de preparación (staging area).
 
 Cuando no se le pasan opciones, el comando "git diff" busca los cambios entre los archivos en el sistema de archivos local y los archivos que han sido agregados al área de preparación (staging area) pero aún no han sido confirmados con un commit.
 
@@ -517,12 +542,13 @@ En resumen, cuando no se le pasan opciones, el comando "git diff" compara los ca
 
 Para especificar el mensaje de log de una confirmación (commit) y evitar que se abra el editor, se puede utilizar la opción "-m" seguida del mensaje de log deseado.
 La sintaxis del comando sería:
-*git commit -m "mensaje de log"*
+`*git commit -m "mensaje de log"*`
 
 En este caso, el mensaje de log debe estar entre comillas. El mensaje de log es una descripción corta y concisa de los cambios que se están confirmando. Es importante que sea una descripción clara y detallada para poder entender los cambios en el futuro.
 Al utilizar esta opción, git no abrirá un editor para que escribas el mensaje de log, sino que tomará el mensaje que se le ha pasado como argumento.
 
-En resumen, para especificar el mensaje de log y evitar que se abra el editor se puede utilizar la opción -m seguida del mensaje de log deseado, por ejemplo: git commit -m "mensaje de log"
+En resumen, para especificar el mensaje de log y evitar que se abra el editor se puede utilizar la opción -m seguida del mensaje de log deseado, por ejemplo: 
+`git commit -m "mensaje de log"`
 
 
 ## 50. ¿Que opcion hay que pasarle a git commit para que añada todos los cambios efectuados en ficheros con seguimiento (tracked)?
@@ -530,7 +556,7 @@ En resumen, para especificar el mensaje de log y evitar que se abra el editor se
 Para incluir todos los cambios efectuados en los archivos con seguimiento (tracked) en una confirmación (commit) sin tener que especificar cada uno de ellos individualmente, se puede utilizar la opción "--all" o "-a" junto con el comando "git commit".
 
 La sintaxis del comando sería
-*git commit -a -m "mensaje de log"*
+`*git commit -a -m "mensaje de log"*`
 
 Al utilizar esta opción, git automáticamente agrega todos los cambios en los archivos con seguimiento (tracked) al área de preparación (staging area) y los incluye en el commit. Es importante mencionar que esta opcion no incluye los archivos sin seguimiento (untracked)
 
@@ -547,7 +573,7 @@ Cuando se ejecuta el comando "git log" sin argumentos, se muestra información d
 
 Además, también se muestra una lista de los commits más recientes en primer lugar.
 La estructura de la salida del comando "git log" es la siguiente:
-```Ŕuby
+```
 commit <identificador único del commit>
 Author: <autor del commit>
 Date: <fecha de creación>
@@ -565,7 +591,7 @@ La opción "--graph" de git log muestra un gráfico ascii en la consola que ilus
 La opción --graph se utiliza para visualizar la estructura y relación entre los commits, las ramas y los merges. Con esta opción se puede ver fácilmente la historia del repositorio, las ramas activas y las fusiones de ramas.
 
 La sintaxis para utilizar esta opción es:
-*git log --graph*
+`*git log --graph*`
 
 Al utilizar esta opción junto con git log, se obtiene una representación gráfica de las ramas y los commits en el repositorio, que ayuda a entender la estructura y evolución del repositorio.
 
@@ -577,29 +603,29 @@ En resumen, la opción --graph de git log muestra un gráfico ascii en la consol
 El comando "git remote" muestra una lista de los repositorios remotos configurados en el repositorio local. Los repositorios remotos son versiones del repositorio en servidores externos, como GitHub o Bitbucket, con los que se pueden sincronizar los cambios realizados en el repositorio local.
 
 La sintaxis para utilizar el comando git remote es:
-*git remote*
+`*git remote*`
 
-Al ejecutar este comando, se mostrará una lista con los nombres de los repositorios remotos configurados en el repositorio local. Por defecto, git solo tiene un repositorio remoto llamado "origin" pero se pueden agregar más repositorios remotos con el comando git remote add <nombre> <url>.
+Al ejecutar este comando, se mostrará una lista con los nombres de los repositorios remotos configurados en el repositorio local. Por defecto, git solo tiene un repositorio remoto llamado "origin" pero se pueden agregar más repositorios remotos con el comando `git remote add <nombre> <url>`.
 
 En resumen, el comando git remote muestra una lista de los repositorios remotos configurados en el repositorio local, ayudando a saber a qué repositorios se está conectado y poder sincronizar los cambios realizados en el repositorio local con ellos.
 
 
 ## 54. ¿Que muestra el comando git remote -v?
 
-El comando "git remote -v" con claves ssh, muestra una lista detallada de los repositorios remotos configurados en el repositorio local, incluyendo la URL de cada uno de ellos, utilizando la autenticación ssh.
+El comando `"git remote -v"` con claves ssh, muestra una lista detallada de los repositorios remotos configurados en el repositorio local, incluyendo la URL de cada uno de ellos, utilizando la autenticación ssh.
 
 La diferencia con el comando git remote -v anterior es que en lugar de utilizar una URL http o https para conectarse al repositorio remoto, se utiliza una URL ssh.
 
 La sintaxis para utilizar el comando git remote -v con claves ssh es la misma:
-*git remote -v*
+`*git remote -v*`
 
 En lugar de ver una URL http o https se verá una URL ssh, como por ejemplo:
-*origin git@github.com:username/repository.git (fetch)*
-*origin git@github.com:username/repository.git (push)*
+`*origin git@github.com:username/repository.git (fetch)*`
+`*origin git@github.com:username/repository.git (push)*`
 
 El uso de claves ssh es una forma más segura de autenticarse en un repositorio remoto, ya que no requiere ingresar una contraseña cada vez que se realiza una operación en el repositorio remoto.
 
-En resumen, el comando git remote -v con claves ssh es similar al comando git remote -v, pero utiliza la autenticación ssh para mostrar la lista detallada de los repositorios remotos configurados en el repositorio local, incluyendo la URL ssh de cada uno de ellos, ayudando a saber a qué repositorios se está conectado y a conocer las URL para realizar push y pull de manera segura.
+En resumen, el comando `git remote -v` con claves ssh es similar al comando git remote -v, pero utiliza la autenticación ssh para mostrar la lista detallada de los repositorios remotos configurados en el repositorio local, incluyendo la URL ssh de cada uno de ellos, ayudando a saber a qué repositorios se está conectado y a conocer las URL para realizar push y pull de manera segura.
 
 
 ## 55. ¿Como se añade un nuevo repositorio remoto?
@@ -607,10 +633,10 @@ En resumen, el comando git remote -v con claves ssh es similar al comando git re
 Para añadir un nuevo repositorio remoto utilizando ssh, se utiliza el comando "git remote add" seguido del nombre que se quiere asignar al repositorio remoto y la URL ssh del repositorio.
 
 La sintaxis para añadir un nuevo repositorio remoto con ssh es:
-*git remote add <nombre> <url-ssh>*
+`*git remote add <nombre> <url-ssh>*`
 
 Por ejemplo, si quieres añadir un repositorio remoto llamado "upstream" con la URL ssh git@github.com:username/upstreamrepo.git, el comando sería:
-*git remote add upstream git@github.com:username/upstreamrepo.git*
+`*git remote add upstream git@github.com:username/upstreamrepo.git*`
 
 Una vez ejecutado el comando, se añadirá el nuevo repositorio remoto con el nombre "upstream" y se podrá utilizar para realizar operaciones como push, pull, fetch, entre otras, utilizando la URL ssh.
 
@@ -627,10 +653,10 @@ Cuando se hace un git clone, se clona un repositorio completo desde una URL (pue
 De manera predeterminada, git clone asume que se quiere clonar la rama principal del repositorio, que suele ser la rama "master". Por lo tanto, la rama master en el repositorio remoto será seguida por la rama master en el repositorio local clonado.
 
 Sin embargo, si se quiere clonar una rama específica, se puede especificar utilizando el parámetro --branch, seguido del nombre de la rama, por ejemplo:
-*git clone --branch <nombre-rama> <url>*
+`*git clone --branch <nombre-rama> <url>*`
 
 Por ejemplo, si quieres clonar la rama "dev" del repositorio remoto ubicado en https://github.com/username/repository.git, el comando sería:
-*git clone --branch dev https://github.com/username/repository.git*
+`*git clone --branch dev https://github.com/username/repository.git*`
 
 En resumen, cuando se hace git clone, se clona un repositorio completo desde una URL en una nueva carpeta en el sistema de archivos local y el repositorio remoto establecido en git clone es el que se encuentra en la URL especificada, por defecto se clonará la rama master, pero se puede especificar la rama que se quiera clonar utilizando el parámetro --branch.
 
@@ -639,7 +665,7 @@ En resumen, cuando se hace git clone, se clona un repositorio completo desde una
 
 
 Para enviar los cambios en el repositorio local en la rama master al repositorio remoto apuntado por origen, se utiliza el comando "git push". La sintaxis para enviar los cambios en la rama master al repositorio remoto apuntado por origen es:
-*git push origin master*
+`*git push origin master*`
 
 Donde "origin" es el nombre del repositorio remoto y "master" es el nombre de la rama local a la que se quieren enviar los cambios.
 Este comando enviará los cambios realizados en la rama local al repositorio remoto apuntado por "origin", en la rama "master" del repositorio remoto. Es importante tener en cuenta que si existen cambios en el repositorio remoto que no están presentes en el repositorio local, git push puede fallar y es necesario hacer un git pull antes de hacer git push.
@@ -652,12 +678,12 @@ En resumen, para enviar los cambios en el repositorio local en la rama master al
 ## 58. ¿Qué diferencias hay entre git pull y git fetch?
 
 La diferencia principal entre git pull y git fetch es cómo manejan los cambios en el repositorio remoto.
-- *Git pull* es una combinación de dos comandos: git fetch y git merge. Primero, git fetch descarga los cambios del repositorio remoto al repositorio local, pero no los aplica automáticamente. En segundo lugar, git merge toma los cambios descargados y los aplica al repositorio local, generando una nueva confirmación (commit) con los cambios combinados.
+- `*Git pull*` es una combinación de dos comandos: git fetch y git merge. Primero, git fetch descarga los cambios del repositorio remoto al repositorio local, pero no los aplica automáticamente. En segundo lugar, git merge toma los cambios descargados y los aplica al repositorio local, generando una nueva confirmación (commit) con los cambios combinados.
   
-- *Git fetch*, por otro lado, sólo descarga los cambios del repositorio remoto al repositorio local, pero no los aplica automáticamente. Los cambios descargados permanecen en una rama remota, la cual debe ser mergeada manualmente con la rama local deseada.
+- `*Git fetch*`, por otro lado, sólo descarga los cambios del repositorio remoto al repositorio local, pero no los aplica automáticamente. Los cambios descargados permanecen en una rama remota, la cual debe ser mergeada manualmente con la rama local deseada.
 
-En resumen, *git pull* es útil cuando quieres descargar y combinar automáticamente los cambios del repositorio remoto con tu repositorio local. Mientras que git fetch es útil cuando quieres descargar los cambios del repositorio remoto, pero decidir manualmente en qué momento y cómo combinarlos con tu repositorio local.
-Además, Git pull tiene una opción *--rebase*, que hace que los cambios se apliquen mediante un rebase en lugar de un merge, esto puede ayudar a evitar conflictos y hacer que el historial de commits sea más lineal.
+En resumen, `*git pull*` es útil cuando quieres descargar y combinar automáticamente los cambios del repositorio remoto con tu repositorio local. Mientras que git fetch es útil cuando quieres descargar los cambios del repositorio remoto, pero decidir manualmente en qué momento y cómo combinarlos con tu repositorio local.
+Además, Git pull tiene una opción `*--rebase*`, que hace que los cambios se apliquen mediante un rebase en lugar de un merge, esto puede ayudar a evitar conflictos y hacer que el historial de commits sea más lineal.
 
 
 
@@ -667,13 +693,13 @@ Si se intenta enviar y mezclar los cambios actuales al repositorio remoto y algu
 
 En esta situación, git te mostrará los archivos con conflictos y tendrás que abrirlos y editarlos para resolver los conflictos. En estos archivos podrás ver las versiones de cada línea de los cambios que se han realizado en tu repositorio local y en el repositorio remoto.
 
-Una vez que hayas resuelto el conflicto, debes agregar los cambios resueltos con *git add* y luego hacer un *git commit* para confirmar los cambios.
+Una vez que hayas resuelto el conflicto, debes agregar los cambios resueltos con `*git add*` y luego hacer un `*git commit*` para confirmar los cambios.
 
-Una vez que hayas resuelto el conflicto y confirmado los cambios, podrás enviar tus cambios al repositorio remoto con *git push*.
+Una vez que hayas resuelto el conflicto y confirmado los cambios, podrás enviar tus cambios al repositorio remoto con `*git push*`.
 
-Es importante mencionar que es recomendable hacer un *git pull* antes de intentar hacer un *git push*, esto ayudará a detectar y resolver conflictos antes de enviar los cambios al repositorio remoto.
+Es importante mencionar que es recomendable hacer un `*git pull*` antes de intentar hacer un `*git push*`, esto ayudará a detectar y resolver conflictos antes de enviar los cambios al repositorio remoto.
 
-En resumen, cuando se intenta enviar y mezclar los cambios actuales al repositorio remoto y alguien se ha adelantado y mezclado sus cambios primero, puede ocurrir un conflicto, en este caso, git te mostrará los archivos con conflictos y tendrás que abrirlos y editarlos para resolver los conflictos, una vez resuelto el conflicto, se deben agregar los cambios resueltos con *git add* y luego hacer un *git commit* para confirmar los cambios y finalmente se pueden enviar los cambios al repositorio remoto con *git push*, es recomendable hacer un *git pull* antes de intentar hacer un *git push* para detectar y resolver conflictos antes de enviar los cambios al repositorio remoto.
+En resumen, cuando se intenta enviar y mezclar los cambios actuales al repositorio remoto y alguien se ha adelantado y mezclado sus cambios primero, puede ocurrir un conflicto, en este caso, git te mostrará los archivos con conflictos y tendrás que abrirlos y editarlos para resolver los conflictos, una vez resuelto el conflicto, se deben agregar los cambios resueltos con `*git add*` y luego hacer un `*git commit*` para confirmar los cambios y finalmente se pueden enviar los cambios al repositorio remoto con `*git push*`, es recomendable hacer un `*git pull*` antes de intentar hacer un *git push* para detectar y resolver conflictos antes de enviar los cambios al repositorio remoto.
 
 
 
@@ -692,14 +718,14 @@ En resumen, el trabajar con múltiples ramas en Git permite una mayor flexibilid
 
 ## 62. ¿Como se añade una nueva rama?
 
-Para crear una nueva rama en Git, se utiliza el comando *git branch*. El comando se utiliza de la siguiente manera:
-*git branch nombre_de_la_nueva_rama*
+Para crear una nueva rama en Git, se utiliza el comando `*git branch*`. El comando se utiliza de la siguiente manera:
+`*git branch nombre_de_la_nueva_rama*`
 
-Este comando creará una nueva rama con el nombre especificado, pero no te cambiará a ella. Para cambiarte a la nueva rama y comenzar a trabajar en ella, puedes utilizar el comando *git checkout* de la siguiente manera:
-*git checkout nombre_de_la_nueva_rama*
+Este comando creará una nueva rama con el nombre especificado, pero no te cambiará a ella. Para cambiarte a la nueva rama y comenzar a trabajar en ella, puedes utilizar el comando `*git checkout*` de la siguiente manera:
+`*git checkout nombre_de_la_nueva_rama*`
 
-Si deseas crear una nueva rama y cambiarte a ella en un solo paso, puedes usar el comando *git checkout -b* de la siguiente manera:
-*git checkout -b nombre_de_la_nueva_rama*
+Si deseas crear una nueva rama y cambiarte a ella en un solo paso, puedes usar el comando `*git checkout -b*` de la siguiente manera:
+`*git checkout -b nombre_de_la_nueva_rama*`
 
 Con este comando, se creará una nueva rama con el nombre especificado y automáticamente te cambiará a ella. Una vez en la nueva rama, podrás hacer cambios y luego hacer un commit para guardarlos en esa rama específica.
 
@@ -707,30 +733,30 @@ Con este comando, se creará una nueva rama con el nombre especificado y automá
 ## 63. ¿Cómo se hace que una rama esté activa?
 
 Para hacer que una rama esté activa (cambiarte a ella) en Git, se utiliza el comando git checkout. El comando se utiliza de la siguiente manera:
-*git checkout nombre_de_la_rama*
+`*git checkout nombre_de_la_rama*`
 
 Este comando cambiará tu "HEAD" (puntero que indica la posición actual en el historial del repositorio) a la rama especificada, y te permitirá trabajar en esa rama. También te mostrará los archivos de esa rama en tu directorio de trabajo.
 
-También puedes ver todas las ramas existentes y cual esta activa con el comando *git branch*. El nombre de la rama activa estará precedida de un asterisco (*)
-*git branch*
+También puedes ver todas las ramas existentes y cual esta activa con el comando `*git branch*`. El nombre de la rama activa estará precedida de un asterisco (*)
+`*git branch*`
 
 Es importante tener en cuenta que si realizas cambios en la rama activa y haces un commit, estos cambios se guardarán en esa rama en particular, y no estarán disponibles en otras ramas hasta que sean fusionadas (merge).
 
-Para listar las ramas existentes en un repositorio de Git, se utiliza el comando *git branch*. Este comando mostrará una lista de todas las ramas existentes en el repositorio, con un asterisco (*) delante de la rama activa.
+Para listar las ramas existentes en un repositorio de Git, se utiliza el comando `*git branch*`. Este comando mostrará una lista de todas las ramas existentes en el repositorio, con un asterisco (*) delante de la rama activa.
 
 La fusión (merge) de ramas es el proceso de combinar los cambios de una rama con otra. Es utilizado para integrar cambios realizados en una rama a otra, ya sea la rama principal o otra rama de trabajo.
 
-Para fusionar dos ramas en Git, se utiliza el comando *git merge*. El comando se utiliza de la siguiente manera:
-*git merge nombre_de_la_rama_a_fusionar*
+Para fusionar dos ramas en Git, se utiliza el comando `*git merge*`. El comando se utiliza de la siguiente manera:
+`*git merge nombre_de_la_rama_a_fusionar*`
 
 Este comando combinará los cambios de la rama especificada con la rama activa.
 
-Para borrar una rama en Git, se utiliza el comando *git branch -d*. El comando se utiliza de la siguiente manera:
-*git branch -d nombre_de_la_rama*
+Para borrar una rama en Git, se utiliza el comando `*git branch -d*`. El comando se utiliza de la siguiente manera:
+`*git branch -d nombre_de_la_rama*`
 
 Este comando eliminará la rama especificada del repositorio.
-Para recuperar una rama de un repositorio remoto y crear una rama local de seguimiento, se utiliza el comando git checkout -b seguido del nombre de la rama remota y la opción *--track*. El comando se utiliza de la siguiente manera:
-*git checkout -b nombre_de_la_rama_local --track nombre_de_la_rama_remota*
+Para recuperar una rama de un repositorio remoto y crear una rama local de seguimiento, se utiliza el comando git checkout -b seguido del nombre de la rama remota y la opción `*--track*`. El comando se utiliza de la siguiente manera:
+`git checkout -b nombre_de_la_rama_local --track nombre_de_la_rama_remota`
 
 
 ## 69. ¿Qué es la reorganización (rebase) de ramas?
@@ -753,7 +779,7 @@ La reorganización no se debe usar cuando se ha hecho push de una rama a un repo
 Para hacer un merge en Git, debes seguir los siguientes pasos:
 - Asegúrate de estar en la rama en la que deseas integrar los cambios (por ejemplo, la rama principal). Puedes verificar en qué rama estás utilizando el comando git branch y el nombre de la rama activa estará precedida por un asterisco (*).
 - Usa el comando git merge seguido del nombre de la rama que deseas fusionar. Por ejemplo:
-*git merge nombre_de_la_rama*
+`git merge nombre_de_la_rama`
 
 Git intentará fusionar automáticamente los cambios. Si hay conflictos, tendrás que resolverlos manualmente antes de poder hacer el merge.
 Una vez resueltos los conflictos, debes hacer un commit para guardar los cambios en la rama principal.
@@ -761,7 +787,7 @@ Una vez resueltos los conflictos, debes hacer un commit para guardar los cambios
 Para hacer un rebase en Git, debes seguir los siguientes pasos:
 - Asegúrate de estar en la rama que deseas reorganizar. Puedes verificar en qué rama estás utilizando el comando git branch y el nombre de la rama activa estará precedida por un asterisco (*).
 - Usa el comando git rebase seguido del nombre de la rama base. Por ejemplo:
-*git rebase nombre_de_la_rama_base*
+`git rebase nombre_de_la_rama_base`
 
 Git intentará reorganizar automáticamente los cambios. Si hay conflictos, tendrás que resolverlos manualmente antes de poder hacer el rebase.
 
